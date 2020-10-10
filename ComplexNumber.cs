@@ -9,28 +9,29 @@ namespace wcf_calc_demo
     [DataContract]
     public class ComplexNumber
     {
-        double real;
-        double imaginary;
+        private double real;
+        private double imaginary;
 
         public ComplexNumber(double real, double imaginary)
         {
-            this.real = real;
-            this.imaginary = imaginary;
+            this.real = RoundInput(real);
+            this.imaginary = RoundInput(imaginary);
         }
-
 
         [DataMember]
         public double Real 
         {
             get { return real; }
-            set { real = value; }
+            set { real = RoundInput(value); }
         }
        
         [DataMember]
         public double Imaginary
         {
             get { return imaginary; }
-            set { imaginary = value; }
+            set { imaginary = RoundInput(value); }
         }
+
+        private double RoundInput(double input) => Math.Round(input, 4);
     }
 }

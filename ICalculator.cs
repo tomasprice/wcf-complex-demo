@@ -14,16 +14,28 @@ namespace wcf_calc_demo
     {
 
         [OperationContract]
-        ComplexNumber Multiply(ComplexNumber complexNumber, ComplexNumber complexNumber_2);
+        ComplexNumber Multiply(
+            ComplexNumber complexNumber, 
+            ComplexNumber complexNumber_2,
+            string complex);
 
         [OperationContract]
-        ComplexNumber Substract(ComplexNumber complexNumber, ComplexNumber complexNumber_2);
+        ComplexNumber Substract(
+            ComplexNumber complexNumber, 
+            ComplexNumber complexNumber_2,
+            string complex);
 
         [OperationContract]
-        ComplexNumber Add(ComplexNumber complexNumber, ComplexNumber complexNumber_2);
+        ComplexNumber Add(
+            ComplexNumber complexNumber, 
+            ComplexNumber complexNumber_2,
+            string complex);
 
         [OperationContract]
-        ComplexNumber Divade(ComplexNumber complexNumber, ComplexNumber complexNumber_2);
+        ComplexNumber Divade(
+            ComplexNumber complexNumber, 
+            ComplexNumber complexNumber_2,
+            string complex);
     }
 
 
