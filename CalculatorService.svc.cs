@@ -13,10 +13,12 @@ namespace wcf_calc_demo
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class CalculatorService : ICalculator
     {
-        public ComplexNumber Add(
-            ComplexNumber complexNumber, 
-            ComplexNumber complexNumber_2,
-            string complex = null)
+        public ComplexNumber
+            Add(
+                ComplexNumber complexNumber, 
+                ComplexNumber complexNumber_2,
+                string complex = null
+            )
         {
             if (complex != null)
             {
@@ -32,10 +34,13 @@ namespace wcf_calc_demo
 
             return result;
         }
-        public ComplexNumber Substract(
-            ComplexNumber complexNumber,
-            ComplexNumber complexNumber_2,
-            string complex = null)
+
+        public ComplexNumber 
+            Substract(
+                ComplexNumber complexNumber,
+                ComplexNumber complexNumber_2,
+                string complex = null
+            )
         {
             if (complex != null)
             {
@@ -52,10 +57,12 @@ namespace wcf_calc_demo
             return result;
         }
 
-        public ComplexNumber Multiply(
-            ComplexNumber complexNumber,
-            ComplexNumber complexNumber_2,
-            string complex = null)
+        public ComplexNumber 
+            Multiply(
+                ComplexNumber complexNumber,
+                ComplexNumber complexNumber_2,
+                string complex = null
+            )
         {
             if (complex != null)
             {
@@ -75,10 +82,12 @@ namespace wcf_calc_demo
             return result;
         }
 
-        public ComplexNumber Divade(
-            ComplexNumber complexNumber,
-            ComplexNumber complexNumber_2,
-            string complex = null)
+        public ComplexNumber 
+            Divade(
+                ComplexNumber complexNumber,
+                ComplexNumber complexNumber_2,
+                string complex = null
+            )
         {
             if (complex != null)
             {
@@ -101,10 +110,12 @@ namespace wcf_calc_demo
             return result;
         }
 
-        private ComplexNumber ConvertString(
-            string userInput,
-            int indexStart,
-            int indexEnd)
+        private ComplexNumber 
+            ConvertString(
+                string userInput,
+                int indexStart,
+                int indexEnd
+            )
         { 
             ComplexNumber complex = new ComplexNumber();
             bool start = true;
