@@ -12,6 +12,8 @@ namespace wcf_calc_demo
         private double real;
         private double imaginary;
 
+        public ComplexNumber() { }
+
         public ComplexNumber(double real, double imaginary)
         {
             this.real = RoundInput(real);

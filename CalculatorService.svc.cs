@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -17,6 +18,13 @@ namespace wcf_calc_demo
             ComplexNumber complexNumber_2,
             string complex = null)
         {
+            if (complex != null)
+            {
+                int divader = complex.IndexOf(" ");
+                complexNumber = ConvertString(complex, 0, divader);
+                complexNumber_2 = ConvertString(complex, ++divader, complex.Length-1);
+            }
+
             var realOutput = complexNumber.Real + complexNumber_2.Real;
             var imaginaryOuptut = complexNumber.Imaginary + complexNumber_2.Imaginary;
 
@@ -31,6 +39,9 @@ namespace wcf_calc_demo
         {
             if (complex != null)
             {
+                int divader = complex.IndexOf(" ");
+                complexNumber = ConvertString(complex, 0, divader);
+                complexNumber_2 = ConvertString(complex, ++divader, complex.Length - 1);
             }
 
             var realOutput = complexNumber.Real - complexNumber_2.Real;
@@ -46,6 +57,13 @@ namespace wcf_calc_demo
             ComplexNumber complexNumber_2,
             string complex = null)
         {
+            if (complex != null)
+            {
+                int divader = complex.IndexOf(" ");
+                complexNumber = ConvertString(complex, 0, divader);
+                complexNumber_2 = ConvertString(complex, ++divader, complex.Length - 1);
+            }
+
             var realOutput = (complexNumber.Real * complexNumber_2.Real)
                 + ((complexNumber.Imaginary * complexNumber_2.Imaginary) * (-1));
 
@@ -62,6 +80,12 @@ namespace wcf_calc_demo
             ComplexNumber complexNumber_2,
             string complex = null)
         {
+            if (complex != null)
+            {
+                int divader = complex.IndexOf(" ");
+                complexNumber = ConvertString(complex, 0, divader);
+                complexNumber_2 = ConvertString(complex, ++divader, complex.Length - 1);
+            }
 
             var realOutput = (complexNumber.Real * complexNumber_2.Real)
                 - ((complexNumber.Imaginary * complexNumber_2.Imaginary) * (-1));
@@ -74,14 +98,56 @@ namespace wcf_calc_demo
 
             var result = new ComplexNumber(realOutput / downLine, imaginaryOutput / downLine);
 
-
             return result;
         }
 
-        private string ConvertString(string userInput)
-        {
+        private ComplexNumber ConvertString(
+            string userInput,
+            int indexStart,
+            int indexEnd)
+        { 
+            ComplexNumber complex = new ComplexNumber();
+            bool start = true;
+            bool negation = false;
+            string helper = "";
 
-            return ""; 
+            for (int i = indexStart; i <= indexEnd; i++)
+            {
+                if (start)
+                {
+                    if ((char)userInput[i] == 45)
+                    {
+                        helper += "-";
+                        i++;
+                    }
+                    start = false;
+                }
+                if (!start && (char)userInput[i] == 45)
+                {
+                    negation = true;
+                }
+                
+                if ((char)userInput[i] >= 48 && (char)userInput[i] <= 57)
+                {
+                    if (negation)
+                    {
+                        helper += "-";
+                    }
+                    helper += (char)userInput[i];
+                    negation = false;
+                }
+                else
+                {
+                    if (complex.Real == 0)
+                    {
+                        complex.Real = double.Parse(helper);
+                        helper = "";
+                    }
+                }
+            }
+            complex.Imaginary = double.Parse(helper);
+            return complex;
         }
     }
 }
+ 
