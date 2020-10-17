@@ -10,6 +10,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientCalculator", "ClientC
 		{E94E50F9-3845-4FB9-B7E9-DD1F12FE14BF} = {E94E50F9-3845-4FB9-B7E9-DD1F12FE14BF}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleClient", "ConsoleClient\ConsoleClient.csproj", "{7379BBBF-F3D1-4B66-A328-123CB03953FD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E94E50F9-3845-4FB9-B7E9-DD1F12FE14BF} = {E94E50F9-3845-4FB9-B7E9-DD1F12FE14BF}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +29,10 @@ Global
 		{94425956-57E2-4B0B-8306-D54F0F6CA08B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94425956-57E2-4B0B-8306-D54F0F6CA08B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94425956-57E2-4B0B-8306-D54F0F6CA08B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7379BBBF-F3D1-4B66-A328-123CB03953FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7379BBBF-F3D1-4B66-A328-123CB03953FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7379BBBF-F3D1-4B66-A328-123CB03953FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7379BBBF-F3D1-4B66-A328-123CB03953FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
