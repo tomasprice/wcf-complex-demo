@@ -20,10 +20,20 @@ namespace wcf_calc_demo
             string complex);
 
         [OperationContract]
+        ComplexNumber Multiply(
+            double real_1, double imaginary_1,
+            double real_2, double imaginary_2);
+
+        [OperationContract]
         ComplexNumber Substract(
             ComplexNumber complexNumber, 
             ComplexNumber complexNumber_2,
             string complex);
+
+        [OperationContract]
+        ComplexNumber Substract(
+            double real_1, double imaginary_1,
+            double real_2, double imaginary_2);
 
         [OperationContract]
         ComplexNumber Add(
@@ -32,9 +42,19 @@ namespace wcf_calc_demo
             string complex);
 
         [OperationContract]
+        ComplexNumber Add(
+            double real_1, double imaginary_1,
+            double real_2, double imaginary_2);
+
+        [OperationContract]
         ComplexNumber Divade(
             ComplexNumber complexNumber, 
             ComplexNumber complexNumber_2,
             string complex);
+
+        [OperationContract]
+        ComplexNumber Divade(
+            double real_1, double imaginary_1,
+            double real_2, double imaginary_2);
     }
 }
