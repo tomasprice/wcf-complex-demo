@@ -17,7 +17,7 @@ namespace wcf_calc_demo
         ComplexNumber Multiply(
             ComplexNumber complexNumber, 
             ComplexNumber complexNumber_2,
-            string complex);
+            string complex = null);
 
         [OperationContract(Name = "DoublesMultiply")]
         ComplexNumber Multiply(
@@ -28,7 +28,7 @@ namespace wcf_calc_demo
         ComplexNumber Substract(
             ComplexNumber complexNumber, 
             ComplexNumber complexNumber_2,
-            string complex);
+            string complex = null);
 
         [OperationContract(Name = "DoublesSubstract")]
         ComplexNumber Substract(
@@ -39,7 +39,7 @@ namespace wcf_calc_demo
         ComplexNumber Add(
             ComplexNumber complexNumber, 
             ComplexNumber complexNumber_2,
-            string complex);
+            string complex = null);
 
         [OperationContract(Name = "DoublesAdd")]
         ComplexNumber Add(
@@ -50,7 +50,7 @@ namespace wcf_calc_demo
         ComplexNumber Divade(
             ComplexNumber complexNumber, 
             ComplexNumber complexNumber_2,
-            string complex);
+            string complex = null);
 
         [OperationContract(Name = "DoublesDivade")]
         ComplexNumber Divade(

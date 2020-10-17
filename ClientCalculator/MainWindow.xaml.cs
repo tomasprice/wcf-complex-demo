@@ -27,18 +27,21 @@ namespace ClientCalculator
         }
         private void btn_click_1(object sender, RoutedEventArgs e)
         {
-            var calculator = new CalculatorServiceReference.CalculatorClient();
+            var calculatorService = new CalculatorServiceReference.CalculatorClient();
 
-            var result = calculator.Add(new ComplexNumber()
+            var complex_1 = new ComplexNumber
             {
-                Real = 10,
-                Imaginary = 15
-            }, new ComplexNumber()
-            {
-                Real = 23,
-                Imaginary = 32
-            }, null);
+                Real = double.Parse(textComplex_1_real.Text),
+                Imaginary = double.Parse(textComplex_1_imaginary.Text)
+            };
 
+            var complex_2 = new ComplexNumber
+            {
+                Real = double.Parse(textComplex_2_real.Text),
+                Imaginary = double.Parse(textComplex_2_imaginary.Text)
+            };
+
+            var result = calculatorService.Add(complex_1, complex_2);
         }
 
         private void btn_click_2(object sender, RoutedEventArgs e)
