@@ -1,5 +1,6 @@
 ﻿using ConsoleClient.CalculatorServiceReferenceConsole;
 using System;
+using System.Threading.Tasks;
 
 namespace ConsoleClient
 {
@@ -11,7 +12,7 @@ namespace ConsoleClient
         static private ComplexNumber complexNumber_2;
 
 
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             do
             {
@@ -21,19 +22,19 @@ namespace ConsoleClient
                 switch (userOperation)
                 {
                     case 1:
-                        Add();
+                        await Add();
                         break;
 
                     case 2:
-                        Substract();
+                        await Substract();
                         break;
 
                     case 3:
-                        Multiply();
+                        await Multiply();
                         break;
 
                     case 4:
-                        Divade();
+                        await Divade();
                         break;
 
                 }
@@ -56,37 +57,37 @@ namespace ConsoleClient
             Console.Write("\nWhat should I do?: ");
         }
 
-        static private void Add()
+        static private async Task Add()
         {
             GetComplex();
-            var result = serviceReference.Add(complexNumber_1, complexNumber_2);
+            var result = await serviceReference.AddAsync(complexNumber_1, complexNumber_2);
             var userOutput = CreateUserOutput(result);
 
             Console.WriteLine($"\t\nOperation of ({CreateUserOutput(complexNumber_1)}) + ({CreateUserOutput(complexNumber_2)}) = {userOutput}");
         }
 
-        static private void Substract()
+        static private async Task Substract()
         {
             GetComplex();
-            var result = serviceReference.Substract(complexNumber_1, complexNumber_2);
+            var result = await serviceReference.SubstractAsync(complexNumber_1, complexNumber_2);
             var userOutput = CreateUserOutput(result);
 
             Console.WriteLine($"\t\nOperation of ({CreateUserOutput(complexNumber_1)}) - ({CreateUserOutput(complexNumber_2)}) = {userOutput}");
         }
 
-        static private void Multiply()
+        static private async Task Multiply()
         {
             GetComplex();
-            var result = serviceReference.Multiply(complexNumber_1, complexNumber_2);
+            var result = await serviceReference.MultiplyAsync(complexNumber_1, complexNumber_2);
             var userOutput = CreateUserOutput(result);
 
             Console.WriteLine($"\t\nOperation of ({CreateUserOutput(complexNumber_1)}) * ({CreateUserOutput(complexNumber_2)}) = {userOutput}");
         }
 
-        static private void Divade() 
+        static private async Task Divade() 
         {
             GetComplex();
-            var result = serviceReference.Divade(complexNumber_1, complexNumber_2);
+            var result = await serviceReference.DivadeAsync(complexNumber_1, complexNumber_2);
             var userOutput = CreateUserOutput(result);
 
             Console.WriteLine($"\t\nOperation of ({CreateUserOutput(complexNumber_1)}) / ({CreateUserOutput(complexNumber_2)}) = {userOutput}");

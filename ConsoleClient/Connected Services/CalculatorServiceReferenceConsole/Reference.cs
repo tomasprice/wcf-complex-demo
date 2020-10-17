@@ -158,7 +158,7 @@ namespace ConsoleClient.CalculatorServiceReferenceConsole {
             return base.Channel.Multiply(complexNumber, complexNumber_2, complex);
         }
         
-        public System.Threading.Tasks.Task<ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber> MultiplyAsync(ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber, ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber_2, string complex) {
+        public System.Threading.Tasks.Task<ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber> MultiplyAsync(ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber, ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber_2, string complex = null) {
             return base.Channel.MultiplyAsync(complexNumber, complexNumber_2, complex);
         }
         
@@ -174,7 +174,7 @@ namespace ConsoleClient.CalculatorServiceReferenceConsole {
             return base.Channel.Substract(complexNumber, complexNumber_2, complex);
         }
         
-        public System.Threading.Tasks.Task<ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber> SubstractAsync(ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber, ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber_2, string complex) {
+        public System.Threading.Tasks.Task<ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber> SubstractAsync(ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber, ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber_2, string complex = null) {
             return base.Channel.SubstractAsync(complexNumber, complexNumber_2, complex);
         }
         
@@ -190,7 +190,7 @@ namespace ConsoleClient.CalculatorServiceReferenceConsole {
             return base.Channel.Add(complexNumber, complexNumber_2, complex);
         }
         
-        public System.Threading.Tasks.Task<ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber> AddAsync(ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber, ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber_2, string complex) {
+        public System.Threading.Tasks.Task<ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber> AddAsync(ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber, ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber_2, string complex = null) {
             return base.Channel.AddAsync(complexNumber, complexNumber_2, complex);
         }
         
@@ -206,7 +206,7 @@ namespace ConsoleClient.CalculatorServiceReferenceConsole {
             return base.Channel.Divade(complexNumber, complexNumber_2, complex);
         }
         
-        public System.Threading.Tasks.Task<ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber> DivadeAsync(ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber, ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber_2, string complex) {
+        public System.Threading.Tasks.Task<ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber> DivadeAsync(ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber, ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber_2, string complex = null) {
             return base.Channel.DivadeAsync(complexNumber, complexNumber_2, complex);
         }
         
