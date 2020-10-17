@@ -17,11 +17,28 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="DoublesMultiply">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="real_1" type="xs:double" />
+        <xs:element minOccurs="0" name="imaginary_1" type="xs:double" />
+        <xs:element minOccurs="0" name="real_2" type="xs:double" />
+        <xs:element minOccurs="0" name="imaginary_2" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoublesMultiplyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/wcf_calc_demo" minOccurs="0" name="DoublesMultiplyResult" nillable="true" type="q4:ComplexNumber" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Substract">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/wcf_calc_demo" minOccurs="0" name="complexNumber" nillable="true" type="q4:ComplexNumber" />
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/wcf_calc_demo" minOccurs="0" name="complexNumber_2" nillable="true" type="q5:ComplexNumber" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/wcf_calc_demo" minOccurs="0" name="complexNumber" nillable="true" type="q5:ComplexNumber" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/wcf_calc_demo" minOccurs="0" name="complexNumber_2" nillable="true" type="q6:ComplexNumber" />
         <xs:element minOccurs="0" name="complex" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -29,15 +46,32 @@
   <xs:element name="SubstractResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/wcf_calc_demo" minOccurs="0" name="SubstractResult" nillable="true" type="q6:ComplexNumber" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/wcf_calc_demo" minOccurs="0" name="SubstractResult" nillable="true" type="q7:ComplexNumber" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoublesSubstract">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="real_1" type="xs:double" />
+        <xs:element minOccurs="0" name="imaginary_1" type="xs:double" />
+        <xs:element minOccurs="0" name="real_2" type="xs:double" />
+        <xs:element minOccurs="0" name="imaginary_2" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoublesSubstractResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/wcf_calc_demo" minOccurs="0" name="DoublesSubstractResult" nillable="true" type="q8:ComplexNumber" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="Add">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/wcf_calc_demo" minOccurs="0" name="complexNumber" nillable="true" type="q7:ComplexNumber" />
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/wcf_calc_demo" minOccurs="0" name="complexNumber_2" nillable="true" type="q8:ComplexNumber" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/wcf_calc_demo" minOccurs="0" name="complexNumber" nillable="true" type="q9:ComplexNumber" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/wcf_calc_demo" minOccurs="0" name="complexNumber_2" nillable="true" type="q10:ComplexNumber" />
         <xs:element minOccurs="0" name="complex" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -45,15 +79,32 @@
   <xs:element name="AddResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/wcf_calc_demo" minOccurs="0" name="AddResult" nillable="true" type="q9:ComplexNumber" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/wcf_calc_demo" minOccurs="0" name="AddResult" nillable="true" type="q11:ComplexNumber" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoublesAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="real_1" type="xs:double" />
+        <xs:element minOccurs="0" name="imaginary_1" type="xs:double" />
+        <xs:element minOccurs="0" name="real_2" type="xs:double" />
+        <xs:element minOccurs="0" name="imaginary_2" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoublesAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/wcf_calc_demo" minOccurs="0" name="DoublesAddResult" nillable="true" type="q12:ComplexNumber" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="Divade">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/wcf_calc_demo" minOccurs="0" name="complexNumber" nillable="true" type="q10:ComplexNumber" />
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/wcf_calc_demo" minOccurs="0" name="complexNumber_2" nillable="true" type="q11:ComplexNumber" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/wcf_calc_demo" minOccurs="0" name="complexNumber" nillable="true" type="q13:ComplexNumber" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/wcf_calc_demo" minOccurs="0" name="complexNumber_2" nillable="true" type="q14:ComplexNumber" />
         <xs:element minOccurs="0" name="complex" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -61,7 +112,24 @@
   <xs:element name="DivadeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/wcf_calc_demo" minOccurs="0" name="DivadeResult" nillable="true" type="q12:ComplexNumber" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/wcf_calc_demo" minOccurs="0" name="DivadeResult" nillable="true" type="q15:ComplexNumber" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoublesDivade">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="real_1" type="xs:double" />
+        <xs:element minOccurs="0" name="imaginary_1" type="xs:double" />
+        <xs:element minOccurs="0" name="real_2" type="xs:double" />
+        <xs:element minOccurs="0" name="imaginary_2" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoublesDivadeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/wcf_calc_demo" minOccurs="0" name="DoublesDivadeResult" nillable="true" type="q16:ComplexNumber" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

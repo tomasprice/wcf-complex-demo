@@ -84,11 +84,23 @@ namespace ClientCalculator.CalculatorServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/Multiply", ReplyAction="http://tempuri.org/ICalculator/MultiplyResponse")]
         System.Threading.Tasks.Task<ClientCalculator.CalculatorServiceReference.ComplexNumber> MultiplyAsync(ClientCalculator.CalculatorServiceReference.ComplexNumber complexNumber, ClientCalculator.CalculatorServiceReference.ComplexNumber complexNumber_2, string complex);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/DoublesMultiply", ReplyAction="http://tempuri.org/ICalculator/DoublesMultiplyResponse")]
+        ClientCalculator.CalculatorServiceReference.ComplexNumber DoublesMultiply(double real_1, double imaginary_1, double real_2, double imaginary_2);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/DoublesMultiply", ReplyAction="http://tempuri.org/ICalculator/DoublesMultiplyResponse")]
+        System.Threading.Tasks.Task<ClientCalculator.CalculatorServiceReference.ComplexNumber> DoublesMultiplyAsync(double real_1, double imaginary_1, double real_2, double imaginary_2);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/Substract", ReplyAction="http://tempuri.org/ICalculator/SubstractResponse")]
         ClientCalculator.CalculatorServiceReference.ComplexNumber Substract(ClientCalculator.CalculatorServiceReference.ComplexNumber complexNumber, ClientCalculator.CalculatorServiceReference.ComplexNumber complexNumber_2, string complex);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/Substract", ReplyAction="http://tempuri.org/ICalculator/SubstractResponse")]
         System.Threading.Tasks.Task<ClientCalculator.CalculatorServiceReference.ComplexNumber> SubstractAsync(ClientCalculator.CalculatorServiceReference.ComplexNumber complexNumber, ClientCalculator.CalculatorServiceReference.ComplexNumber complexNumber_2, string complex);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/DoublesSubstract", ReplyAction="http://tempuri.org/ICalculator/DoublesSubstractResponse")]
+        ClientCalculator.CalculatorServiceReference.ComplexNumber DoublesSubstract(double real_1, double imaginary_1, double real_2, double imaginary_2);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/DoublesSubstract", ReplyAction="http://tempuri.org/ICalculator/DoublesSubstractResponse")]
+        System.Threading.Tasks.Task<ClientCalculator.CalculatorServiceReference.ComplexNumber> DoublesSubstractAsync(double real_1, double imaginary_1, double real_2, double imaginary_2);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/Add", ReplyAction="http://tempuri.org/ICalculator/AddResponse")]
         ClientCalculator.CalculatorServiceReference.ComplexNumber Add(ClientCalculator.CalculatorServiceReference.ComplexNumber complexNumber, ClientCalculator.CalculatorServiceReference.ComplexNumber complexNumber_2, string complex);
@@ -96,11 +108,23 @@ namespace ClientCalculator.CalculatorServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/Add", ReplyAction="http://tempuri.org/ICalculator/AddResponse")]
         System.Threading.Tasks.Task<ClientCalculator.CalculatorServiceReference.ComplexNumber> AddAsync(ClientCalculator.CalculatorServiceReference.ComplexNumber complexNumber, ClientCalculator.CalculatorServiceReference.ComplexNumber complexNumber_2, string complex);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/DoublesAdd", ReplyAction="http://tempuri.org/ICalculator/DoublesAddResponse")]
+        ClientCalculator.CalculatorServiceReference.ComplexNumber DoublesAdd(double real_1, double imaginary_1, double real_2, double imaginary_2);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/DoublesAdd", ReplyAction="http://tempuri.org/ICalculator/DoublesAddResponse")]
+        System.Threading.Tasks.Task<ClientCalculator.CalculatorServiceReference.ComplexNumber> DoublesAddAsync(double real_1, double imaginary_1, double real_2, double imaginary_2);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/Divade", ReplyAction="http://tempuri.org/ICalculator/DivadeResponse")]
         ClientCalculator.CalculatorServiceReference.ComplexNumber Divade(ClientCalculator.CalculatorServiceReference.ComplexNumber complexNumber, ClientCalculator.CalculatorServiceReference.ComplexNumber complexNumber_2, string complex);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/Divade", ReplyAction="http://tempuri.org/ICalculator/DivadeResponse")]
         System.Threading.Tasks.Task<ClientCalculator.CalculatorServiceReference.ComplexNumber> DivadeAsync(ClientCalculator.CalculatorServiceReference.ComplexNumber complexNumber, ClientCalculator.CalculatorServiceReference.ComplexNumber complexNumber_2, string complex);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/DoublesDivade", ReplyAction="http://tempuri.org/ICalculator/DoublesDivadeResponse")]
+        ClientCalculator.CalculatorServiceReference.ComplexNumber DoublesDivade(double real_1, double imaginary_1, double real_2, double imaginary_2);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/DoublesDivade", ReplyAction="http://tempuri.org/ICalculator/DoublesDivadeResponse")]
+        System.Threading.Tasks.Task<ClientCalculator.CalculatorServiceReference.ComplexNumber> DoublesDivadeAsync(double real_1, double imaginary_1, double real_2, double imaginary_2);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -130,7 +154,7 @@ namespace ClientCalculator.CalculatorServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public ClientCalculator.CalculatorServiceReference.ComplexNumber Multiply(ClientCalculator.CalculatorServiceReference.ComplexNumber complexNumber, ClientCalculator.CalculatorServiceReference.ComplexNumber complexNumber_2, string complex) {
+        public ClientCalculator.CalculatorServiceReference.ComplexNumber Multiply(ClientCalculator.CalculatorServiceReference.ComplexNumber complexNumber, ClientCalculator.CalculatorServiceReference.ComplexNumber complexNumber_2, string complex = null) {
             return base.Channel.Multiply(complexNumber, complexNumber_2, complex);
         }
         
@@ -138,7 +162,15 @@ namespace ClientCalculator.CalculatorServiceReference {
             return base.Channel.MultiplyAsync(complexNumber, complexNumber_2, complex);
         }
         
-        public ClientCalculator.CalculatorServiceReference.ComplexNumber Substract(ClientCalculator.CalculatorServiceReference.ComplexNumber complexNumber, ClientCalculator.CalculatorServiceReference.ComplexNumber complexNumber_2, string complex) {
+        public ClientCalculator.CalculatorServiceReference.ComplexNumber DoublesMultiply(double real_1, double imaginary_1, double real_2, double imaginary_2) {
+            return base.Channel.DoublesMultiply(real_1, imaginary_1, real_2, imaginary_2);
+        }
+        
+        public System.Threading.Tasks.Task<ClientCalculator.CalculatorServiceReference.ComplexNumber> DoublesMultiplyAsync(double real_1, double imaginary_1, double real_2, double imaginary_2) {
+            return base.Channel.DoublesMultiplyAsync(real_1, imaginary_1, real_2, imaginary_2);
+        }
+        
+        public ClientCalculator.CalculatorServiceReference.ComplexNumber Substract(ClientCalculator.CalculatorServiceReference.ComplexNumber complexNumber, ClientCalculator.CalculatorServiceReference.ComplexNumber complexNumber_2, string complex = null) {
             return base.Channel.Substract(complexNumber, complexNumber_2, complex);
         }
         
@@ -146,7 +178,15 @@ namespace ClientCalculator.CalculatorServiceReference {
             return base.Channel.SubstractAsync(complexNumber, complexNumber_2, complex);
         }
         
-        public ClientCalculator.CalculatorServiceReference.ComplexNumber Add(ClientCalculator.CalculatorServiceReference.ComplexNumber complexNumber, ClientCalculator.CalculatorServiceReference.ComplexNumber complexNumber_2, string complex) {
+        public ClientCalculator.CalculatorServiceReference.ComplexNumber DoublesSubstract(double real_1, double imaginary_1, double real_2, double imaginary_2) {
+            return base.Channel.DoublesSubstract(real_1, imaginary_1, real_2, imaginary_2);
+        }
+        
+        public System.Threading.Tasks.Task<ClientCalculator.CalculatorServiceReference.ComplexNumber> DoublesSubstractAsync(double real_1, double imaginary_1, double real_2, double imaginary_2) {
+            return base.Channel.DoublesSubstractAsync(real_1, imaginary_1, real_2, imaginary_2);
+        }
+        
+        public ClientCalculator.CalculatorServiceReference.ComplexNumber Add(ClientCalculator.CalculatorServiceReference.ComplexNumber complexNumber, ClientCalculator.CalculatorServiceReference.ComplexNumber complexNumber_2, string complex = null) {
             return base.Channel.Add(complexNumber, complexNumber_2, complex);
         }
         
@@ -154,12 +194,28 @@ namespace ClientCalculator.CalculatorServiceReference {
             return base.Channel.AddAsync(complexNumber, complexNumber_2, complex);
         }
         
-        public ClientCalculator.CalculatorServiceReference.ComplexNumber Divade(ClientCalculator.CalculatorServiceReference.ComplexNumber complexNumber, ClientCalculator.CalculatorServiceReference.ComplexNumber complexNumber_2, string complex) {
+        public ClientCalculator.CalculatorServiceReference.ComplexNumber DoublesAdd(double real_1, double imaginary_1, double real_2, double imaginary_2) {
+            return base.Channel.DoublesAdd(real_1, imaginary_1, real_2, imaginary_2);
+        }
+        
+        public System.Threading.Tasks.Task<ClientCalculator.CalculatorServiceReference.ComplexNumber> DoublesAddAsync(double real_1, double imaginary_1, double real_2, double imaginary_2) {
+            return base.Channel.DoublesAddAsync(real_1, imaginary_1, real_2, imaginary_2);
+        }
+        
+        public ClientCalculator.CalculatorServiceReference.ComplexNumber Divade(ClientCalculator.CalculatorServiceReference.ComplexNumber complexNumber, ClientCalculator.CalculatorServiceReference.ComplexNumber complexNumber_2, string complex = null) {
             return base.Channel.Divade(complexNumber, complexNumber_2, complex);
         }
         
         public System.Threading.Tasks.Task<ClientCalculator.CalculatorServiceReference.ComplexNumber> DivadeAsync(ClientCalculator.CalculatorServiceReference.ComplexNumber complexNumber, ClientCalculator.CalculatorServiceReference.ComplexNumber complexNumber_2, string complex) {
             return base.Channel.DivadeAsync(complexNumber, complexNumber_2, complex);
+        }
+        
+        public ClientCalculator.CalculatorServiceReference.ComplexNumber DoublesDivade(double real_1, double imaginary_1, double real_2, double imaginary_2) {
+            return base.Channel.DoublesDivade(real_1, imaginary_1, real_2, imaginary_2);
+        }
+        
+        public System.Threading.Tasks.Task<ClientCalculator.CalculatorServiceReference.ComplexNumber> DoublesDivadeAsync(double real_1, double imaginary_1, double real_2, double imaginary_2) {
+            return base.Channel.DoublesDivadeAsync(real_1, imaginary_1, real_2, imaginary_2);
         }
     }
 }
