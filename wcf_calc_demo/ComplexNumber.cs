@@ -34,6 +34,11 @@ namespace wcf_calc_demo
             set { imaginary = RoundInput(value); }
         }
 
+        public override string ToString()
+        {
+            return $"{real} {imaginary}i";
+        }
+
         private double RoundInput(double input) => Math.Round(input, 4);
     }
 }
