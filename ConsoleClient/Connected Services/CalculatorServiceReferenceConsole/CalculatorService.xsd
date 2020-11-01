@@ -7,4 +7,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ComplexNumber" nillable="true" type="tns:ComplexNumber" />
+  <xs:complexType name="DetailedException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Details" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DetailedException" nillable="true" type="tns:DetailedException" />
 </xs:schema>

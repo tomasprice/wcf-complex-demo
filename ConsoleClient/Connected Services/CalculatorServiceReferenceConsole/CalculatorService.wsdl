@@ -3,8 +3,8 @@
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:50461/CalculatorService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://localhost:50461/CalculatorService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:50461/CalculatorService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/wcf_calc_demo" />
+      <xsd:import schemaLocation="http://localhost:50461/CalculatorService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="ICalculator_Multiply_InputMessage">
@@ -13,11 +13,17 @@
   <wsdl:message name="ICalculator_Multiply_OutputMessage">
     <wsdl:part name="parameters" element="tns:MultiplyResponse" />
   </wsdl:message>
+  <wsdl:message name="ICalculator_Multiply_DetailedExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/wcf_calc_demo" name="detail" element="q1:DetailedException" />
+  </wsdl:message>
   <wsdl:message name="ICalculator_DoublesMultiply_InputMessage">
     <wsdl:part name="parameters" element="tns:DoublesMultiply" />
   </wsdl:message>
   <wsdl:message name="ICalculator_DoublesMultiply_OutputMessage">
     <wsdl:part name="parameters" element="tns:DoublesMultiplyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_DoublesMultiply_DetailedExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/wcf_calc_demo" name="detail" element="q2:DetailedException" />
   </wsdl:message>
   <wsdl:message name="ICalculator_Substract_InputMessage">
     <wsdl:part name="parameters" element="tns:Substract" />
@@ -25,11 +31,17 @@
   <wsdl:message name="ICalculator_Substract_OutputMessage">
     <wsdl:part name="parameters" element="tns:SubstractResponse" />
   </wsdl:message>
+  <wsdl:message name="ICalculator_Substract_DetailedExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/wcf_calc_demo" name="detail" element="q3:DetailedException" />
+  </wsdl:message>
   <wsdl:message name="ICalculator_DoublesSubstract_InputMessage">
     <wsdl:part name="parameters" element="tns:DoublesSubstract" />
   </wsdl:message>
   <wsdl:message name="ICalculator_DoublesSubstract_OutputMessage">
     <wsdl:part name="parameters" element="tns:DoublesSubstractResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_DoublesSubstract_DetailedExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/wcf_calc_demo" name="detail" element="q4:DetailedException" />
   </wsdl:message>
   <wsdl:message name="ICalculator_Add_InputMessage">
     <wsdl:part name="parameters" element="tns:Add" />
@@ -37,11 +49,17 @@
   <wsdl:message name="ICalculator_Add_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddResponse" />
   </wsdl:message>
+  <wsdl:message name="ICalculator_Add_DetailedExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/wcf_calc_demo" name="detail" element="q5:DetailedException" />
+  </wsdl:message>
   <wsdl:message name="ICalculator_DoublesAdd_InputMessage">
     <wsdl:part name="parameters" element="tns:DoublesAdd" />
   </wsdl:message>
   <wsdl:message name="ICalculator_DoublesAdd_OutputMessage">
     <wsdl:part name="parameters" element="tns:DoublesAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_DoublesAdd_DetailedExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/wcf_calc_demo" name="detail" element="q6:DetailedException" />
   </wsdl:message>
   <wsdl:message name="ICalculator_Divade_InputMessage">
     <wsdl:part name="parameters" element="tns:Divade" />
@@ -49,44 +67,58 @@
   <wsdl:message name="ICalculator_Divade_OutputMessage">
     <wsdl:part name="parameters" element="tns:DivadeResponse" />
   </wsdl:message>
+  <wsdl:message name="ICalculator_Divade_DetailedExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/wcf_calc_demo" name="detail" element="q7:DetailedException" />
+  </wsdl:message>
   <wsdl:message name="ICalculator_DoublesDivade_InputMessage">
     <wsdl:part name="parameters" element="tns:DoublesDivade" />
   </wsdl:message>
   <wsdl:message name="ICalculator_DoublesDivade_OutputMessage">
     <wsdl:part name="parameters" element="tns:DoublesDivadeResponse" />
   </wsdl:message>
+  <wsdl:message name="ICalculator_DoublesDivade_DetailedExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/wcf_calc_demo" name="detail" element="q8:DetailedException" />
+  </wsdl:message>
   <wsdl:portType name="ICalculator">
     <wsdl:operation name="Multiply">
       <wsdl:input wsaw:Action="http://tempuri.org/ICalculator/Multiply" message="tns:ICalculator_Multiply_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICalculator/MultiplyResponse" message="tns:ICalculator_Multiply_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ICalculator/MultiplyDetailedExceptionFault" name="DetailedExceptionFault" message="tns:ICalculator_Multiply_DetailedExceptionFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="DoublesMultiply">
       <wsdl:input wsaw:Action="http://tempuri.org/ICalculator/DoublesMultiply" message="tns:ICalculator_DoublesMultiply_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICalculator/DoublesMultiplyResponse" message="tns:ICalculator_DoublesMultiply_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ICalculator/DoublesMultiplyDetailedExceptionFault" name="DetailedExceptionFault" message="tns:ICalculator_DoublesMultiply_DetailedExceptionFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="Substract">
       <wsdl:input wsaw:Action="http://tempuri.org/ICalculator/Substract" message="tns:ICalculator_Substract_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICalculator/SubstractResponse" message="tns:ICalculator_Substract_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ICalculator/SubstractDetailedExceptionFault" name="DetailedExceptionFault" message="tns:ICalculator_Substract_DetailedExceptionFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="DoublesSubstract">
       <wsdl:input wsaw:Action="http://tempuri.org/ICalculator/DoublesSubstract" message="tns:ICalculator_DoublesSubstract_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICalculator/DoublesSubstractResponse" message="tns:ICalculator_DoublesSubstract_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ICalculator/DoublesSubstractDetailedExceptionFault" name="DetailedExceptionFault" message="tns:ICalculator_DoublesSubstract_DetailedExceptionFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="Add">
       <wsdl:input wsaw:Action="http://tempuri.org/ICalculator/Add" message="tns:ICalculator_Add_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICalculator/AddResponse" message="tns:ICalculator_Add_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ICalculator/AddDetailedExceptionFault" name="DetailedExceptionFault" message="tns:ICalculator_Add_DetailedExceptionFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="DoublesAdd">
       <wsdl:input wsaw:Action="http://tempuri.org/ICalculator/DoublesAdd" message="tns:ICalculator_DoublesAdd_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICalculator/DoublesAddResponse" message="tns:ICalculator_DoublesAdd_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ICalculator/DoublesAddDetailedExceptionFault" name="DetailedExceptionFault" message="tns:ICalculator_DoublesAdd_DetailedExceptionFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="Divade">
       <wsdl:input wsaw:Action="http://tempuri.org/ICalculator/Divade" message="tns:ICalculator_Divade_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICalculator/DivadeResponse" message="tns:ICalculator_Divade_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ICalculator/DivadeDetailedExceptionFault" name="DetailedExceptionFault" message="tns:ICalculator_Divade_DetailedExceptionFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="DoublesDivade">
       <wsdl:input wsaw:Action="http://tempuri.org/ICalculator/DoublesDivade" message="tns:ICalculator_DoublesDivade_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICalculator/DoublesDivadeResponse" message="tns:ICalculator_DoublesDivade_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ICalculator/DoublesDivadeDetailedExceptionFault" name="DetailedExceptionFault" message="tns:ICalculator_DoublesDivade_DetailedExceptionFault_FaultMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ICalculator" type="tns:ICalculator">
@@ -99,6 +131,9 @@
       <wsdl:output>
         <soap:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="DetailedExceptionFault">
+        <soap:fault use="literal" name="DetailedExceptionFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="DoublesMultiply">
       <soap:operation soapAction="http://tempuri.org/ICalculator/DoublesMultiply" style="document" />
@@ -108,6 +143,9 @@
       <wsdl:output>
         <soap:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="DetailedExceptionFault">
+        <soap:fault use="literal" name="DetailedExceptionFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Substract">
       <soap:operation soapAction="http://tempuri.org/ICalculator/Substract" style="document" />
@@ -117,6 +155,9 @@
       <wsdl:output>
         <soap:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="DetailedExceptionFault">
+        <soap:fault use="literal" name="DetailedExceptionFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="DoublesSubstract">
       <soap:operation soapAction="http://tempuri.org/ICalculator/DoublesSubstract" style="document" />
@@ -126,6 +167,9 @@
       <wsdl:output>
         <soap:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="DetailedExceptionFault">
+        <soap:fault use="literal" name="DetailedExceptionFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Add">
       <soap:operation soapAction="http://tempuri.org/ICalculator/Add" style="document" />
@@ -135,6 +179,9 @@
       <wsdl:output>
         <soap:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="DetailedExceptionFault">
+        <soap:fault use="literal" name="DetailedExceptionFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="DoublesAdd">
       <soap:operation soapAction="http://tempuri.org/ICalculator/DoublesAdd" style="document" />
@@ -144,6 +191,9 @@
       <wsdl:output>
         <soap:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="DetailedExceptionFault">
+        <soap:fault use="literal" name="DetailedExceptionFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Divade">
       <soap:operation soapAction="http://tempuri.org/ICalculator/Divade" style="document" />
@@ -153,6 +203,9 @@
       <wsdl:output>
         <soap:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="DetailedExceptionFault">
+        <soap:fault use="literal" name="DetailedExceptionFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="DoublesDivade">
       <soap:operation soapAction="http://tempuri.org/ICalculator/DoublesDivade" style="document" />
@@ -162,6 +215,9 @@
       <wsdl:output>
         <soap:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="DetailedExceptionFault">
+        <soap:fault use="literal" name="DetailedExceptionFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="CalculatorService">

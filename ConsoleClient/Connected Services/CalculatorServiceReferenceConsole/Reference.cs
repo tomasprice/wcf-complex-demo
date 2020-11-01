@@ -74,53 +74,138 @@ namespace ConsoleClient.CalculatorServiceReferenceConsole {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DetailedException", Namespace="http://schemas.datacontract.org/2004/07/wcf_calc_demo")]
+    [System.SerializableAttribute()]
+    public partial class DetailedException : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DetailsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MessageField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Date {
+            get {
+                return this.DateField;
+            }
+            set {
+                if ((this.DateField.Equals(value) != true)) {
+                    this.DateField = value;
+                    this.RaisePropertyChanged("Date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Details {
+            get {
+                return this.DetailsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DetailsField, value) != true)) {
+                    this.DetailsField = value;
+                    this.RaisePropertyChanged("Details");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Message {
+            get {
+                return this.MessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
+                    this.MessageField = value;
+                    this.RaisePropertyChanged("Message");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CalculatorServiceReferenceConsole.ICalculator")]
     public interface ICalculator {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/Multiply", ReplyAction="http://tempuri.org/ICalculator/MultiplyResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ConsoleClient.CalculatorServiceReferenceConsole.DetailedException), Action="http://tempuri.org/ICalculator/MultiplyDetailedExceptionFault", Name="DetailedException", Namespace="http://schemas.datacontract.org/2004/07/wcf_calc_demo")]
         ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber Multiply(ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber, ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber_2, string complex);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/Multiply", ReplyAction="http://tempuri.org/ICalculator/MultiplyResponse")]
         System.Threading.Tasks.Task<ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber> MultiplyAsync(ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber, ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber_2, string complex);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/DoublesMultiply", ReplyAction="http://tempuri.org/ICalculator/DoublesMultiplyResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ConsoleClient.CalculatorServiceReferenceConsole.DetailedException), Action="http://tempuri.org/ICalculator/DoublesMultiplyDetailedExceptionFault", Name="DetailedException", Namespace="http://schemas.datacontract.org/2004/07/wcf_calc_demo")]
         ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber DoublesMultiply(double real_1, double imaginary_1, double real_2, double imaginary_2);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/DoublesMultiply", ReplyAction="http://tempuri.org/ICalculator/DoublesMultiplyResponse")]
         System.Threading.Tasks.Task<ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber> DoublesMultiplyAsync(double real_1, double imaginary_1, double real_2, double imaginary_2);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/Substract", ReplyAction="http://tempuri.org/ICalculator/SubstractResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ConsoleClient.CalculatorServiceReferenceConsole.DetailedException), Action="http://tempuri.org/ICalculator/SubstractDetailedExceptionFault", Name="DetailedException", Namespace="http://schemas.datacontract.org/2004/07/wcf_calc_demo")]
         ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber Substract(ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber, ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber_2, string complex);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/Substract", ReplyAction="http://tempuri.org/ICalculator/SubstractResponse")]
         System.Threading.Tasks.Task<ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber> SubstractAsync(ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber, ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber_2, string complex);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/DoublesSubstract", ReplyAction="http://tempuri.org/ICalculator/DoublesSubstractResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ConsoleClient.CalculatorServiceReferenceConsole.DetailedException), Action="http://tempuri.org/ICalculator/DoublesSubstractDetailedExceptionFault", Name="DetailedException", Namespace="http://schemas.datacontract.org/2004/07/wcf_calc_demo")]
         ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber DoublesSubstract(double real_1, double imaginary_1, double real_2, double imaginary_2);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/DoublesSubstract", ReplyAction="http://tempuri.org/ICalculator/DoublesSubstractResponse")]
         System.Threading.Tasks.Task<ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber> DoublesSubstractAsync(double real_1, double imaginary_1, double real_2, double imaginary_2);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/Add", ReplyAction="http://tempuri.org/ICalculator/AddResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ConsoleClient.CalculatorServiceReferenceConsole.DetailedException), Action="http://tempuri.org/ICalculator/AddDetailedExceptionFault", Name="DetailedException", Namespace="http://schemas.datacontract.org/2004/07/wcf_calc_demo")]
         ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber Add(ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber, ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber_2, string complex);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/Add", ReplyAction="http://tempuri.org/ICalculator/AddResponse")]
         System.Threading.Tasks.Task<ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber> AddAsync(ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber, ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber_2, string complex);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/DoublesAdd", ReplyAction="http://tempuri.org/ICalculator/DoublesAddResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ConsoleClient.CalculatorServiceReferenceConsole.DetailedException), Action="http://tempuri.org/ICalculator/DoublesAddDetailedExceptionFault", Name="DetailedException", Namespace="http://schemas.datacontract.org/2004/07/wcf_calc_demo")]
         ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber DoublesAdd(double real_1, double imaginary_1, double real_2, double imaginary_2);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/DoublesAdd", ReplyAction="http://tempuri.org/ICalculator/DoublesAddResponse")]
         System.Threading.Tasks.Task<ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber> DoublesAddAsync(double real_1, double imaginary_1, double real_2, double imaginary_2);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/Divade", ReplyAction="http://tempuri.org/ICalculator/DivadeResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ConsoleClient.CalculatorServiceReferenceConsole.DetailedException), Action="http://tempuri.org/ICalculator/DivadeDetailedExceptionFault", Name="DetailedException", Namespace="http://schemas.datacontract.org/2004/07/wcf_calc_demo")]
         ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber Divade(ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber, ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber_2, string complex);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/Divade", ReplyAction="http://tempuri.org/ICalculator/DivadeResponse")]
         System.Threading.Tasks.Task<ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber> DivadeAsync(ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber, ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber_2, string complex);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/DoublesDivade", ReplyAction="http://tempuri.org/ICalculator/DoublesDivadeResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ConsoleClient.CalculatorServiceReferenceConsole.DetailedException), Action="http://tempuri.org/ICalculator/DoublesDivadeDetailedExceptionFault", Name="DetailedException", Namespace="http://schemas.datacontract.org/2004/07/wcf_calc_demo")]
         ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber DoublesDivade(double real_1, double imaginary_1, double real_2, double imaginary_2);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/DoublesDivade", ReplyAction="http://tempuri.org/ICalculator/DoublesDivadeResponse")]
@@ -154,7 +239,7 @@ namespace ConsoleClient.CalculatorServiceReferenceConsole {
                 base(binding, remoteAddress) {
         }
         
-        public ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber Multiply(ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber, ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber_2, string complex = null) {
+        public ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber Multiply(ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber, ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber_2, string complex) {
             return base.Channel.Multiply(complexNumber, complexNumber_2, complex);
         }
         
@@ -170,7 +255,7 @@ namespace ConsoleClient.CalculatorServiceReferenceConsole {
             return base.Channel.DoublesMultiplyAsync(real_1, imaginary_1, real_2, imaginary_2);
         }
         
-        public ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber Substract(ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber, ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber_2, string complex = null) {
+        public ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber Substract(ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber, ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber_2, string complex) {
             return base.Channel.Substract(complexNumber, complexNumber_2, complex);
         }
         
@@ -186,7 +271,7 @@ namespace ConsoleClient.CalculatorServiceReferenceConsole {
             return base.Channel.DoublesSubstractAsync(real_1, imaginary_1, real_2, imaginary_2);
         }
         
-        public ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber Add(ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber, ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber_2, string complex = null) {
+        public ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber Add(ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber, ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber_2, string complex) {
             return base.Channel.Add(complexNumber, complexNumber_2, complex);
         }
         
@@ -202,7 +287,7 @@ namespace ConsoleClient.CalculatorServiceReferenceConsole {
             return base.Channel.DoublesAddAsync(real_1, imaginary_1, real_2, imaginary_2);
         }
         
-        public ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber Divade(ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber, ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber_2, string complex = null) {
+        public ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber Divade(ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber, ConsoleClient.CalculatorServiceReferenceConsole.ComplexNumber complexNumber_2, string complex) {
             return base.Channel.Divade(complexNumber, complexNumber_2, complex);
         }
         
