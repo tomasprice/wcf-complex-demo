@@ -142,6 +142,24 @@ namespace wcf_calc_demo
                 complexNumber = ConvertString(complex, 0, divader);
                 complexNumber_2 = ConvertString(complex, ++divader, complex.Length - 1);
             }
+            try
+            {
+                if (complexNumber.Imaginary == 0 || complexNumber.Real == 0
+                    || complexNumber_2.Imaginary == 0 || complexNumber_2.Real == 0)
+                {
+                    var exceptionDetails = new DetailedException
+                    {
+                        Message = "Divade by 0 attempt",
+                        Details =
+                            $"User Data: "
+                            + $"\n\t\tNumber one: {complexNumber.ToString()} "
+                            + $"\n\t\tNumber two: {complexNumber_2.ToString()}",
+                        Date = System.DateTime.Now
+                    };
+                    throw new FaultException<DetailedException>(exceptionDetails, "Error occured during operation");
+                }
+            }
+            catch (Exception ex) { throw ex; }
 
             var realOutput = (complexNumber.Real * complexNumber_2.Real)
                 - ((complexNumber.Imaginary * complexNumber_2.Imaginary) * (-1));

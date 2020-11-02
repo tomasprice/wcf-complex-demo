@@ -69,6 +69,7 @@
     <Compile Include="CalculatorService.svc.cs">
       <DependentUpon>CalculatorService.svc</DependentUpon>
     </Compile>
+    <Compile Include="DetailedException.cs" />
     <Compile Include="ICalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

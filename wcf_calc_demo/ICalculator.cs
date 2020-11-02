@@ -12,7 +12,6 @@ namespace wcf_calc_demo
     [ServiceContract]
     public interface ICalculator
     {
-
         [OperationContract]
         [FaultContract(typeof(DetailedException))]
         ComplexNumber Multiply(
