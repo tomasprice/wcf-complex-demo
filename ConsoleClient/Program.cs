@@ -1,5 +1,6 @@
 ﻿using ConsoleClient.CalculatorServiceReferenceConsole;
 using System;
+using System.ServiceModel;
 using System.Threading.Tasks;
 
 namespace ConsoleClient
@@ -18,26 +19,33 @@ namespace ConsoleClient
             {
                 Menu();
                 userOperation = int.Parse(Console.ReadLine().ToString());
-
-                switch (userOperation)
+                try
                 {
-                    case 1:
-                        await Add();
-                        break;
+                    switch (userOperation)
+                    {
+                        case 1:
+                            await Add();
+                            break;
 
-                    case 2:
-                        await Substract();
-                        break;
+                        case 2:
+                            await Substract();
+                            break;
 
-                    case 3:
-                        await Multiply();
-                        break;
+                        case 3:
+                            await Multiply();
+                            break;
 
-                    case 4:
-                        await Divade();
-                        break;
+                        case 4:
+                            await Divade();
+                            break;
+                    }
 
                 }
+                catch(FaultException<CalculatorServiceReferenceConsole.DetailedException> ex)
+                {
+                    ExceptionMessageHandling(ex);
+                }
+
                 Console.ReadLine();
                 Console.Clear();
 
@@ -136,6 +144,15 @@ namespace ConsoleClient
             }
             complexNumber.Imaginary *= -1;
             return $"{complexNumber.Real} - {complexNumber.Imaginary}i";
+        }
+
+        private static void ExceptionMessageHandling (FaultException<CalculatorServiceReferenceConsole.DetailedException> ex)
+        {
+            Console.WriteLine("\n\tAn error occured during selected operation!");
+            Console.WriteLine($"\tMessage: {ex.Detail.Message}");
+            Console.WriteLine($"\tDetails: "
+                + $"{ex.Detail.Details}");
+            Console.WriteLine($"\tTime: {ex.Detail.Date}");
         }
     }
 }
